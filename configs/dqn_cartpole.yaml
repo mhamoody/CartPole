@@ -1,0 +1,34 @@
+# DQN hyperparameters for CartPole-v1
+env_id: CartPole-v1
+seed: 42
+
+# Training schedule
+max_episodes: 500
+max_steps_per_episode: 500
+
+# Replay buffer
+buffer_size: 50000
+min_buffer_size: 1000   # warmup steps before learning starts
+batch_size: 64
+
+# Learning
+gamma: 0.99             # discount factor
+lr: 1.0e-3              # Adam learning rate
+train_freq: 1           # optimize every N env steps
+
+# Target network
+target_update_freq: 1000  # hard update every N env steps
+
+# Epsilon-greedy exploration
+epsilon_start: 1.0
+epsilon_end: 0.05
+epsilon_decay_steps: 20000
+
+# Evaluation
+eval_episodes: 20
+
+# Paths
+checkpoint_dir: outputs/checkpoints
+log_dir: outputs/logs
+plot_dir: outputs/plots
+video_dir: outputs/videos
